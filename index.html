@@ -1,17 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Under Construction</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Page</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <div class="container">
-        <div class="icon">🚧</div>
-        <h1>Under Construction</h1>
-        <p>I'm working hard to finish this site with information about my projects, publications, and experience.</p> <h3><br> Stay tuned!</h3>
+  <!-- Include header.html -->
+  <div id="header-placeholder"></div>
+  <main class="profile">
+    <div class="profile-header">
+      <!-- <p>Data science / Data engeneer</p> -->
+    <div class="profile-image">
+      <img src="https://github.com/user-attachments/assets/29f7ec53-fdd9-4754-adbc-1d8a4beb3af2" alt="Juan Alfonso">
+      </div>
+      <div class="social-icons">
+        <a href="https://github.com/jdalfons" target="_blank">
+            <img src="https://github.com/user-attachments/assets/90cd46b5-506d-4790-9225-9f4c6c742a34" alt="GitHub" class="icon-pres">
+        </a>
+        <a href="https://www.linkedin.com/in/jdalfons" target="_blank">
+            <img src="https://github.com/user-attachments/assets/0e219a82-9af1-440e-8469-71087c49fa6b" alt="LinkedIn" class="icon-pres">
+        </a>
+        <a href="https://x.com/jdalfonsooc" target="_blank">
+            <img src="https://github.com/user-attachments/assets/0bc33872-0a9f-498b-85be-9e2ff413380d" alt="x.com" class="icon-pres">
+        </a>
+      </div>
+    </div>  
+    <div class="profile-info">
+      <h2>Biography</h2>
+      <p>
+        Juan Diego Alfonso, Colombian tech lover living in france. <br>
+        I'm working on different data scientist and  data engineering projects accross different industries.
+        passionate about open source, vodeo games and sports, I'm always looking for new challenges and opportunities to learn.
+      </p>
 
+      <div class="details">
+        <section>
+          <h3>Interests</h3>
+          <ul>
+            <li>Machine learning</li>
+            <li>Open Source</li>
+            <li>Team Science</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Education</h3>
+          <ul>
+            <li><b>Master statistics and informatics</b>, Lyon Fr, 2024</li>
+            <li><b>System Engeenering</b>, Bog Col, 2021</li>
+            <li><b>Tech in programing</b>, Bog Col, 2014</li>
+          </ul>
+        </section>
+      </div>
     </div>
+  </main>
+
+  <script src="js/script.js"></script>
+  <script>
+    fetch('./elements/header.html')
+      .then(response => response.text())
+      .then(data => {
+        alert('Fetch successful');
+        document.getElementById('header-placeholder').innerHTML = data;
+      })
+  </script>
 </body>
 </html>
