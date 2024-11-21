@@ -7,7 +7,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #F8EADC;
+    background-color: #ffffff;
     transition: background-color 0.3s, color 0.3s;
 }
 /* Header styling */
@@ -23,9 +23,19 @@ body {
     position: fixed;
     margin: 0 2rem; /* Add margin to left and right */
 }
+.header-ph{
+    /* position: fixed; */
+    align-items: center;
+    display: flex;
+    margin: 0 2rem; /* Add margin to left and right */
+    width: calc(100% - 4rem); /* Adjust width to account for margins */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 /* Light theme */
 body.light {
-    background-color: #F8EADC;
+    background-color: #ffffff;
     color: #000000;
 }
 
