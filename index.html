@@ -8,7 +8,9 @@
 </head>
 <body>
   <!-- Include header.html -->
-  <div id="header-placeholder"></div>
+  <header class="header">
+    <div id="header-placeholder"></div>
+  </header>
   <main class="profile">
     <div class="profile-header">
       <!-- <p>Data science / Data engeneer</p> -->
@@ -59,7 +61,7 @@
 
   <script src="js/script.js"></script>
   <script>
-    fetch('./elements/header.html')
+    fetch('https://raw.githubusercontent.com/jdalfons/jdalfons.github.io/refs/heads/main/elements/header.html')
       .then(response => response.text())
       .then(data => {
         document.getElementById('header-placeholder').innerHTML = data;
