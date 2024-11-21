@@ -1,5 +1,6 @@
 // Automatically apply the theme based on user selection
-const themeSelect = document.getElementById('theme-select')
+
+const switchSelect = document.querySelector('.switch-select')
 
 // Function to set theme
 function setTheme(theme) {
@@ -14,9 +15,30 @@ function setTheme(theme) {
 }
 
 // Load theme from localStorage or default to 'auto'
+
 const savedTheme = localStorage.getItem('theme') || 'auto'
-themeSelect.value = savedTheme
+switchSelect.checked = savedTheme === 'dark'
+switchSelect.addEventListener('change', () => {
+  switchSelect.value = switchSelect.checked ? 'dark' : 'light'
+  console.log()
+})
 setTheme(savedTheme)
 
 // Update theme on change
-themeSelect.addEventListener('change', (e) => setTheme(e.target.value))
+switchSelect.addEventListener('change', (e) => setTheme(e.target.value))
+
+
+// Ensure header-title is visible on small screens
+const headerTitle = document.querySelector('.header-title')
+
+function handleResize() {
+
+  if (window.innerWidth < 600) {
+    headerTitle.style.display = 'none'
+  } else {
+    headerTitle.style.display = 'block'
+  }
+}
+
+window.addEventListener('resize', handleResize)
+handleResize()

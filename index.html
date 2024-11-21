@@ -9,8 +9,8 @@
 <body>
   <!-- Include header.html -->
   <header class="header">
-    <h1>Juan Alfonso</h1>
-      <nav>
+    <h1 class="header-title">Juan Alfonso</h1>
+      <nav class="nav-bar">
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="projects.html">Projects</a></li>
@@ -18,17 +18,15 @@
         </ul>
       </nav>
       <div class="theme-switcher">
-        <label for="theme-select">Theme:</label>
-        <select id="theme-select">
-          <option value="auto">Auto</option>
-          <option value="light">Light</option>
-          <option value="dark">Dark</option>
-        </select>
+          <label class="switch">
+            <input type="checkbox" class="switch-select">
+            <span class="slider round"></span>
+        </label>
       </div>
   </header>
   <main class="profile">
-    <div class="profile-header">
-      <!-- <p>Data science / Data engeneer</p> -->
+    <section class="profile-section"></section>
+      <div class="profile-header">
     <div class="profile-image">
       <img src="https://github.com/user-attachments/assets/29f7ec53-fdd9-4754-adbc-1d8a4beb3af2" alt="Juan Alfonso">
       </div>
@@ -47,9 +45,9 @@
     <div class="profile-info">
       <h2>Biography</h2>
       <p>
-        Juan Diego Alfonso, Colombian tech lover living in france. <br>
-        I'm working on different data scientist and  data engineering projects accross different industries.
-        passionate about open source, vodeo games and sports, I'm always looking for new challenges and opportunities to learn.
+        Juan Diego Alfonso, Colombian tech lover living in France. <br>
+        I'm working on different data science and data engineering projects across different industries.
+        Passionate about open source, video games, and sports, I'm always looking for new challenges and opportunities to learn.
       </p>
 
       <div class="details">

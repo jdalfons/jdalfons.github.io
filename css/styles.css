@@ -6,7 +6,7 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: system-ui, -apple-system, 'Helvetica Neue', sans-serif, sans-serif;
     background-color: #ffffff;
     transition: background-color 0.3s, color 0.3s;
 }
@@ -16,7 +16,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
-    background-color: #A29CBB;
+    background-color: #7D78A3;
     color: white;
     top: 0;
     width: calc(100% - 4rem); /* Adjust width to account for margins */
@@ -24,7 +24,6 @@ body {
     margin: 0 2rem; /* Add margin to left and right */
 }
 .header-ph{
-    /* position: fixed; */
     align-items: center;
     display: flex;
     margin: 0 2rem; /* Add margin to left and right */
@@ -35,7 +34,7 @@ body {
 }
 /* Light theme */
 body.light {
-    background-color: #ffffff;
+    background-color:  #f8f1eb;
     color: #000000;
 }
 
@@ -48,12 +47,15 @@ body.light p {
 }
 
 body.light a {
-    color: #454b5a;
+    color: #DDEEF7;
 }
 
+body.light li {
+    color: #666;
+}
 /* Dark theme */
 body.dark {
-    background-color: #303048;
+    background-color:  #303048;
     color: #ffffff;
 }
 
@@ -65,7 +67,7 @@ body.dark p {
 }
 
 body.dark a {
-    color: #454b5a;
+    color: #FFE4EB;
 }
 body.dark li {
     color: #bbbbbb;
@@ -76,6 +78,7 @@ body.dark li {
 h1, h2, h3, p, a, li{
     color: inherit; /* Inherit color from body */
 }
+
 
 .icon {
     font-size: 5em;
@@ -114,7 +117,28 @@ h1, h2, h3, p, a, li{
   .theme-switcher select {
     margin-left: 0.5rem;
   }
-  
+
+@media (max-width: 768px) {
+    .profile {
+        flex-direction: column;
+        align-items: center;
+    }
+    .profile-header{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 220px;
+    }
+}
+
+@media (max-width: 400px) {
+    .profile-header{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 300px;
+    }
+}
   /* Profile content */
   .profile {
     display: flex;
@@ -167,3 +191,94 @@ h1, h2, h3, p, a, li{
 .social-icons a:hover {
     color: #3700b3;
 }
+
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #FDFDFD;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    color: #ffffff;
+    -webkit-transition: .4s;
+    transition: .4s;
+    background-image: url('../img/Sun Vector Icon.svg'); /* Adjusted path to the sun icon image */
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+.slider:after {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    right: 4px;
+    bottom: 4px;
+    color: #ffffff;
+    -webkit-transition: .4s;
+    transition: .4s;
+    background-image: url('../img/Moon Vector Icon.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0;
+}
+
+/* The slider when checked */
+input:checked + .slider:before {
+    opacity: 0;
+}
+/* The slider when checked */
+input:checked + .slider:after {
+    opacity: 1;
+}
+  
+  input:checked + .slider {
+    background-color: #C7C7D7;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #C7C7D7;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
