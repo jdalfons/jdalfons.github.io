@@ -230,7 +230,7 @@ h1, h2, h3, p, a, li{
     color: #ffffff;
     -webkit-transition: .4s;
     transition: .4s;
-    background-image: url('../img/Sun Vector Icon.svg'); /* Adjusted path to the sun icon image */
+    background-image: url('https://github.com/user-attachments/assets/4c345764-900b-4f56-ac06-f7ad311c498d'); /* Adjusted path to the sun icon image */
     background-size: cover;
     background-repeat: no-repeat;
 
@@ -245,7 +245,7 @@ h1, h2, h3, p, a, li{
     color: #ffffff;
     -webkit-transition: .4s;
     transition: .4s;
-    background-image: url('../img/Moon Vector Icon.svg');
+    background-image: url('https://github.com/user-attachments/assets/a1bb5805-a1ac-4111-842c-a1fd2f4e0c7a');
     background-size: cover;
     background-repeat: no-repeat;
     opacity: 0;
