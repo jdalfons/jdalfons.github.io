@@ -23,7 +23,7 @@
     {
       "id": 2,
       "title": "ML Pipeline Automation",
-      "description": "End-to-end machine learning pipeline with automated data preprocessing, model training, validation, and deployment using Docker, Apache Airflow, and cloud services.",
+      "description": "End-to-end machine learning pipeline with automated data preprocessing, model training, validation, and deployment using Docker, Apache Airflow, and cloud knowledge.",
       "icon": "🤖",
       "category": "Machine Learning",
       "technologies": ["Python", "Apache Airflow", "Docker", "MLflow", "AWS", "Scikit-learn"],
@@ -142,15 +142,15 @@
     },
     {
       "id": 8,
-      "title": "Microservices Architecture",
-      "description": "Scalable microservices platform built with Python, FastAPI, and Docker, implementing CQRS pattern and event-driven architecture.",
+      "title": "Microknowledge Architecture",
+      "description": "Scalable microknowledge platform built with Python, FastAPI, and Docker, implementing CQRS pattern and event-driven architecture.",
       "icon": "🚀",
       "category": "Backend Development",
       "technologies": ["Python", "FastAPI", "Docker", "Kubernetes", "RabbitMQ", "MongoDB"],
       "status": "In Progress",
       "startDate": "2024-02-01",
       "endDate": null,
-      "githubUrl": "https://github.com/jdalfons/microservices-platform",
+      "githubUrl": "https://github.com/jdalfons/microknowledge-platform",
       "liveUrl": null,
       "features": [
         "Event-driven architecture",

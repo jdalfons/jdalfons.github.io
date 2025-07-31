@@ -128,11 +128,33 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Pagination functionality
     initializePagination();
+});
 
-    // Pagination functionality
-    function initializePagination() {
-        // Use embedded data directly (no fetch attempt)
-        const postsData = {
+// Pagination functionality
+async function initializePagination() {
+    let postsData, projectsData;
+    
+    try {
+        
+        // Try to fetch from JSON files first (works with HTTP/HTTPS)
+        const [postsResponse, projectsResponse] = await Promise.all([
+            // fetch('https://raw.githubusercontent.com/jdalfons/jdalfons.github.io/refs/heads/main/data/posts.json'),
+            // fetch('https://raw.githubusercontent.com/jdalfons/jdalfons.github.io/refs/heads/main/data/projects.json')
+          fetch('./data/posts.json'),
+          fetch('./data/projects.json')
+        ]);
+        
+        if (postsResponse.ok && projectsResponse.ok) {
+            postsData = await postsResponse.json();
+            projectsData = await projectsResponse.json();
+            console.log('Successfully loaded data from JSON files');
+        } else {
+            throw new Error('Failed to fetch JSON files');
+        }
+    } catch (error) {
+        console.log('Using embedded data due to:', error.message);
+        // Fallback to embedded data (for file:// protocol)
+        postsData = {
                     "posts": [
                         {
                             "id": 1,
@@ -153,152 +175,6 @@ document.addEventListener('DOMContentLoaded', function() {
                             "readTime": "8 min read",
                             "tags": ["ETL", "Pipeline", "Best Practices"],
                             "url": "https://dev.to/jdalfons/data-engineering-best-practices"
-                        },
-                        {
-                            "id": 3,
-                            "title": "Python for Data Science",
-                            "description": "Complete guide to using Python libraries like Pandas, NumPy, and Matplotlib for data analysis.",
-                            "category": "Data Science",
-                            "date": "2024-02-01",
-                            "readTime": "12 min read",
-                            "tags": ["Python", "Pandas", "NumPy", "Data Analysis"],
-                            "url": "https://github.com/jdalfons/python-data-science-guide"
-                        },
-                        {
-                            "id": 4,
-                            "title": "Building ETL Pipelines",
-                            "description": "Step-by-step tutorial on creating efficient ETL pipelines using modern tools and frameworks.",
-                            "category": "Data Engineering",
-                            "date": "2024-02-10",
-                            "readTime": "10 min read",
-                            "tags": ["ETL", "Apache Airflow", "Data Pipeline"]
-                        },
-                        {
-                            "id": 5,
-                            "title": "Introduction to DevOps",
-                            "description": "Understanding DevOps culture, practices, and tools for continuous integration and deployment.",
-                            "category": "DevOps",
-                            "date": "2024-02-18",
-                            "readTime": "7 min read",
-                            "tags": ["DevOps", "CI/CD", "Docker"]
-                        },
-                        {
-                            "id": 6,
-                            "title": "Statistical Analysis with Python",
-                            "description": "Performing statistical analysis and hypothesis testing using Python and SciPy.",
-                            "category": "Statistics",
-                            "date": "2024-02-25",
-                            "readTime": "9 min read",
-                            "tags": ["Statistics", "Python", "SciPy", "Analysis"]
-                        },
-                        {
-                            "id": 7,
-                            "title": "Deep Learning Fundamentals",
-                            "description": "Introduction to neural networks and deep learning concepts with practical examples.",
-                            "category": "Deep Learning",
-                            "date": "2024-03-05",
-                            "readTime": "15 min read",
-                            "tags": ["Deep Learning", "Neural Networks", "TensorFlow"]
-                        },
-                        {
-                            "id": 8,
-                            "title": "Cloud Computing with AWS",
-                            "description": "Getting started with AWS services for data processing and machine learning workflows.",
-                            "category": "Cloud Computing",
-                            "date": "2024-03-12",
-                            "readTime": "11 min read",
-                            "tags": ["AWS", "Cloud", "S3", "EC2"]
-                        },
-                        {
-                            "id": 9,
-                            "title": "Advanced SQL Techniques",
-                            "description": "Master advanced SQL concepts including window functions, CTEs, and query optimization.",
-                            "category": "Database",
-                            "date": "2024-03-20",
-                            "readTime": "13 min read",
-                            "tags": ["SQL", "Database", "Query Optimization"]
-                        },
-                        {
-                            "id": 10,
-                            "title": "Time Series Analysis",
-                            "description": "Analyzing and forecasting time series data using Python and statistical methods.",
-                            "category": "Data Science",
-                            "date": "2024-03-28",
-                            "readTime": "14 min read",
-                            "tags": ["Time Series", "Forecasting", "ARIMA"]
-                        },
-                        {
-                            "id": 11,
-                            "title": "Natural Language Processing",
-                            "description": "Text processing and analysis techniques using NLTK and spaCy libraries.",
-                            "category": "NLP",
-                            "date": "2024-04-05",
-                            "readTime": "16 min read",
-                            "tags": ["NLP", "Text Analysis", "NLTK", "spaCy"]
-                        },
-                        {
-                            "id": 12,
-                            "title": "Computer Vision Applications",
-                            "description": "Building computer vision applications using OpenCV and deep learning frameworks.",
-                            "category": "Computer Vision",
-                            "date": "2024-04-12",
-                            "readTime": "18 min read",
-                            "tags": ["Computer Vision", "OpenCV", "CNN"]
-                        },
-                        {
-                            "id": 13,
-                            "title": "Morse Code With Python and RPI",
-                            "description": "Creating a Morse code translator using Python and Raspberry Pi.",
-                            "category": "Backend Development",
-                            "date": "2024-04-20",
-                            "readTime": "10 min read",
-                            "tags": ["Python", "Raspberry Pi", "Morse Code"],
-                            "url": "https://github.com/jdalfons/morse-code-python-rpi"
-                        },
-                        {
-                            "id": 14,
-                            "title": "Docker and Containerization",
-                            "description": "Containerizing applications with Docker for consistent deployment across environments.",
-                            "category": "DevOps",
-                            "date": "2024-04-28",
-                            "readTime": "12 min read",
-                            "tags": ["Docker", "Containerization", "Deployment"]
-                        },
-                        {
-                            "id": 15,
-                            "title": "Kubernetes for Data Scientists",
-                            "description": "Orchestrating machine learning workflows and data processing jobs with Kubernetes.",
-                            "category": "DevOps",
-                            "date": "2024-05-05",
-                            "readTime": "17 min read",
-                            "tags": ["Kubernetes", "ML Ops", "Orchestration"]
-                        },
-                        {
-                            "id": 16,
-                            "title": "Data Visualization with D3.js",
-                            "description": "Creating interactive data visualizations for web applications using D3.js library.",
-                            "category": "Data Visualization",
-                            "date": "2024-05-12",
-                            "readTime": "14 min read",
-                            "tags": ["D3.js", "Visualization", "JavaScript", "Web"]
-                        },
-                        {
-                            "id": 17,
-                            "title": "Stream Processing with Apache Kafka",
-                            "description": "Real-time data processing and streaming analytics using Apache Kafka ecosystem.",
-                            "category": "Data Engineering",
-                            "date": "2024-05-20",
-                            "readTime": "15 min read",
-                            "tags": ["Kafka", "Streaming", "Real-time", "Data Engineering"]
-                        },
-                        {
-                            "id": 18,
-                            "title": "MLOps Best Practices",
-                            "description": "Implementing MLOps workflows for automated model training, testing, and deployment.",
-                            "category": "MLOps",
-                            "date": "2024-05-28",
-                            "readTime": "20 min read",
-                            "tags": ["MLOps", "CI/CD", "Model Deployment", "Automation"]
                         }
                     ]
                 };
@@ -328,7 +204,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         {
                             "id": 2,
                             "title": "ML Pipeline Automation",
-                            "description": "End-to-end machine learning pipeline with automated data preprocessing, model training, validation, and deployment using Docker, Apache Airflow, and cloud services.",
+                            "description": "End-to-end machine learning pipeline with automated data preprocessing, model training, validation, and deployment using Docker, Apache Airflow, and cloud knowledge.",
                             "icon": "🤖",
                             "category": "Machine Learning",
                             "technologies": ["Python", "Apache Airflow", "Docker", "MLflow", "AWS", "Scikit-learn"],
@@ -364,126 +240,6 @@ document.addEventListener('DOMContentLoaded', function() {
                                 "Horizontal scaling capabilities",
                                 "Data quality monitoring and alerting"
                             ]
-                        },
-                        {
-                            "id": 4,
-                            "title": "Customer Segmentation Tool",
-                            "description": "Advanced customer segmentation system using clustering algorithms and behavioral analysis to identify target groups and optimize marketing strategies.",
-                            "icon": "📱",
-                            "category": "Data Science",
-                            "technologies": ["Python", "Scikit-learn", "Plotly", "Streamlit", "SQL"],
-                            "status": "Completed",
-                            "startDate": "2023-07-01",
-                            "endDate": "2023-08-30",
-                            "githubUrl": "https://github.com/jdalfons/customer-segmentation",
-                            "liveUrl": "https://customer-segmentation-demo.streamlit.app",
-                            "features": [
-                                "K-means and hierarchical clustering",
-                                "RFM analysis for customer behavior",
-                                "Interactive visualization of segments",
-                                "Segment profiling and insights",
-                                "Marketing campaign recommendations"
-                            ]
-                        },
-                        {
-                            "id": 5,
-                            "title": "Real-time Fraud Detection",
-                            "description": "Machine learning system for detecting fraudulent transactions in real-time using ensemble methods and feature engineering with streaming data processing.",
-                            "icon": "🔍",
-                            "category": "Machine Learning",
-                            "technologies": ["Python", "Apache Kafka", "TensorFlow", "Elasticsearch", "Docker"],
-                            "status": "Completed",
-                            "startDate": "2024-03-01",
-                            "endDate": "2024-05-15",
-                            "githubUrl": "https://github.com/jdalfons/fraud-detection",
-                            "liveUrl": null,
-                            "features": [
-                                "Real-time transaction monitoring",
-                                "Ensemble ML models for fraud detection",
-                                "Feature engineering pipeline",
-                                "Low-latency prediction API",
-                                "Alert system for suspicious activities"
-                            ]
-                        },
-                        {
-                            "id": 6,
-                            "title": "Recommendation Engine",
-                            "description": "Collaborative filtering and content-based recommendation system for e-commerce platforms, improving user engagement and conversion rates.",
-                            "icon": "🎯",
-                            "category": "Machine Learning",
-                            "technologies": ["Python", "TensorFlow", "Apache Spark", "Redis", "FastAPI"],
-                            "status": "In Progress",
-                            "startDate": "2024-04-01",
-                            "endDate": null,
-                            "githubUrl": "https://github.com/jdalfons/recommendation-engine",
-                            "liveUrl": null,
-                            "features": [
-                                "Collaborative filtering algorithms",
-                                "Content-based recommendations",
-                                "Hybrid recommendation approach",
-                                "A/B testing framework",
-                                "Real-time personalization"
-                            ]
-                        },
-                        {
-                            "id": 7,
-                            "title": "Business Intelligence Platform",
-                            "description": "Comprehensive BI solution with automated data ingestion, transformation, and visualization dashboards for executive decision-making.",
-                            "icon": "📊",
-                            "category": "Business Intelligence",
-                            "technologies": ["Python", "Apache Airflow", "dbt", "Tableau", "Snowflake"],
-                            "status": "Completed",
-                            "startDate": "2023-10-01",
-                            "endDate": "2024-01-31",
-                            "githubUrl": "https://github.com/jdalfons/bi-platform",
-                            "liveUrl": "https://bi.company.example.com",
-                            "features": [
-                                "Automated ETL pipelines",
-                                "Data warehouse modeling",
-                                "Executive dashboards",
-                                "Self-service analytics",
-                                "Data governance and lineage"
-                            ]
-                        },
-                        {
-                            "id": 8,
-                            "title": "Microservices Architecture",
-                            "description": "Scalable microservices platform built with Python, FastAPI, and Docker, implementing CQRS pattern and event-driven architecture.",
-                            "icon": "🚀",
-                            "category": "Backend Development",
-                            "technologies": ["Python", "FastAPI", "Docker", "Kubernetes", "RabbitMQ", "MongoDB"],
-                            "status": "In Progress",
-                            "startDate": "2024-02-01",
-                            "endDate": null,
-                            "githubUrl": "https://github.com/jdalfons/microservices-platform",
-                            "liveUrl": null,
-                            "features": [
-                                "Event-driven architecture",
-                                "CQRS pattern implementation",
-                                "Service discovery and load balancing",
-                                "Distributed tracing and monitoring",
-                                "API gateway with authentication"
-                            ]
-                        },
-                        {
-                            "id": 9,
-                            "title": "Data Privacy Compliance Tool",
-                            "description": "Automated GDPR compliance system for data anonymization, consent management, and privacy impact assessments.",
-                            "icon": "🔐",
-                            "category": "Data Privacy",
-                            "technologies": ["Python", "Django", "PostgreSQL", "Celery", "React"],
-                            "status": "Planning",
-                            "startDate": "2024-06-01",
-                            "endDate": null,
-                            "githubUrl": null,
-                            "liveUrl": null,
-                            "features": [
-                                "Data discovery and classification",
-                                "Automated data anonymization",
-                                "Consent management system",
-                                "Privacy impact assessments",
-                                "Compliance reporting and auditing"
-                            ]
                         }
                     ]
                 };
@@ -492,17 +248,17 @@ document.addEventListener('DOMContentLoaded', function() {
             const allPosts = postsData.posts;
             const allProjects = projectsData.projects;
 
-                // Initialize posts pagination
-                const postsPerPage = 6;
-                let currentPostsPage = 1;
-                const totalPostsPages = Math.ceil(allPosts.length / postsPerPage);
+            // Initialize posts pagination
+            const postsPerPage = 6;
+            let currentPostsPage = 1;
+            const totalPostsPages = Math.ceil(allPosts.length / postsPerPage);
 
-                // Initialize projects pagination
-                const projectsPerPage = 4;
-                let currentProjectsPage = 1;
-                const totalProjectsPages = Math.ceil(allProjects.length / projectsPerPage);
+            // Initialize projects pagination
+            const projectsPerPage = 6;
+            let currentProjectsPage = 1;
+            const totalProjectsPages = Math.ceil(allProjects.length / projectsPerPage);
 
-                // Posts pagination functions
+            // Posts pagination functions
                 function displayPosts(page) {
                     const postsGrid = document.getElementById('postsGrid');
                     const startIndex = (page - 1) * postsPerPage;
@@ -622,4 +378,4 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Initial display
                 displayPosts(1);
                 displayProjects(1);
-        })
+}
