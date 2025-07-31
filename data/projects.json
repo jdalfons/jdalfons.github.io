@@ -1,0 +1,184 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "title": "Sales Analytics Dashboard",
+      "description": "Interactive dashboard built with Python and Streamlit for real-time sales analytics. Features predictive modeling, KPI tracking, and automated reporting for business intelligence.",
+      "icon": "📈",
+      "category": "Data Analytics",
+      "technologies": ["Python", "Streamlit", "Pandas", "Plotly", "PostgreSQL"],
+      "status": "Completed",
+      "startDate": "2023-09-01",
+      "endDate": "2023-11-15",
+      "githubUrl": "https://github.com/jdalfons/sales-analytics-dashboard",
+      "liveUrl": "https://sales-dashboard-demo.streamlit.app",
+      "features": [
+        "Real-time sales metrics visualization",
+        "Predictive analytics for sales forecasting",
+        "Interactive filters and drill-down capabilities",
+        "Automated report generation",
+        "Integration with CRM systems"
+      ]
+    },
+    {
+      "id": 2,
+      "title": "ML Pipeline Automation",
+      "description": "End-to-end machine learning pipeline with automated data preprocessing, model training, validation, and deployment using Docker, Apache Airflow, and cloud services.",
+      "icon": "🤖",
+      "category": "Machine Learning",
+      "technologies": ["Python", "Apache Airflow", "Docker", "MLflow", "AWS", "Scikit-learn"],
+      "status": "Completed",
+      "startDate": "2023-12-01",
+      "endDate": "2024-02-28",
+      "githubUrl": "https://github.com/jdalfons/ml-pipeline-automation",
+      "liveUrl": null,
+      "features": [
+        "Automated data ingestion and preprocessing",
+        "Model training with hyperparameter tuning",
+        "Model validation and performance monitoring",
+        "Automated deployment to production",
+        "Version control for models and datasets"
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Data Processing Platform",
+      "description": "Scalable data processing platform built with FastAPI and PostgreSQL, handling millions of records daily with real-time analytics and RESTful API endpoints.",
+      "icon": "🌍",
+      "category": "Data Engineering",
+      "technologies": ["Python", "FastAPI", "PostgreSQL", "Redis", "Docker", "Kubernetes"],
+      "status": "In Progress",
+      "startDate": "2024-01-15",
+      "endDate": null,
+      "githubUrl": "https://github.com/jdalfons/data-processing-platform",
+      "liveUrl": "https://api.dataplatform.example.com",
+      "features": [
+        "High-throughput data ingestion",
+        "Real-time data processing",
+        "RESTful API with automatic documentation",
+        "Horizontal scaling capabilities",
+        "Data quality monitoring and alerting"
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Customer Segmentation Tool",
+      "description": "Advanced customer segmentation system using clustering algorithms and behavioral analysis to identify target groups and optimize marketing strategies.",
+      "icon": "📱",
+      "category": "Data Science",
+      "technologies": ["Python", "Scikit-learn", "Plotly", "Streamlit", "SQL"],
+      "status": "Completed",
+      "startDate": "2023-07-01",
+      "endDate": "2023-08-30",
+      "githubUrl": "https://github.com/jdalfons/customer-segmentation",
+      "liveUrl": "https://customer-segmentation-demo.streamlit.app",
+      "features": [
+        "K-means and hierarchical clustering",
+        "RFM analysis for customer behavior",
+        "Interactive visualization of segments",
+        "Segment profiling and insights",
+        "Marketing campaign recommendations"
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Real-time Fraud Detection",
+      "description": "Machine learning system for detecting fraudulent transactions in real-time using ensemble methods and feature engineering with streaming data processing.",
+      "icon": "🔍",
+      "category": "Machine Learning",
+      "technologies": ["Python", "Apache Kafka", "TensorFlow", "Elasticsearch", "Docker"],
+      "status": "Completed",
+      "startDate": "2024-03-01",
+      "endDate": "2024-05-15",
+      "githubUrl": "https://github.com/jdalfons/fraud-detection",
+      "liveUrl": null,
+      "features": [
+        "Real-time transaction monitoring",
+        "Ensemble ML models for fraud detection",
+        "Feature engineering pipeline",
+        "Low-latency prediction API",
+        "Alert system for suspicious activities"
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Recommendation Engine",
+      "description": "Collaborative filtering and content-based recommendation system for e-commerce platforms, improving user engagement and conversion rates.",
+      "icon": "🎯",
+      "category": "Machine Learning",
+      "technologies": ["Python", "TensorFlow", "Apache Spark", "Redis", "FastAPI"],
+      "status": "In Progress",
+      "startDate": "2024-04-01",
+      "endDate": null,
+      "githubUrl": "https://github.com/jdalfons/recommendation-engine",
+      "liveUrl": null,
+      "features": [
+        "Collaborative filtering algorithms",
+        "Content-based recommendations",
+        "Hybrid recommendation approach",
+        "A/B testing framework",
+        "Real-time personalization"
+      ]
+    },
+    {
+      "id": 7,
+      "title": "Business Intelligence Platform",
+      "description": "Comprehensive BI solution with automated data ingestion, transformation, and visualization dashboards for executive decision-making.",
+      "icon": "📊",
+      "category": "Business Intelligence",
+      "technologies": ["Python", "Apache Airflow", "dbt", "Tableau", "Snowflake"],
+      "status": "Completed",
+      "startDate": "2023-10-01",
+      "endDate": "2024-01-31",
+      "githubUrl": "https://github.com/jdalfons/bi-platform",
+      "liveUrl": "https://bi.company.example.com",
+      "features": [
+        "Automated ETL pipelines",
+        "Data warehouse modeling",
+        "Executive dashboards",
+        "Self-service analytics",
+        "Data governance and lineage"
+      ]
+    },
+    {
+      "id": 8,
+      "title": "Microservices Architecture",
+      "description": "Scalable microservices platform built with Python, FastAPI, and Docker, implementing CQRS pattern and event-driven architecture.",
+      "icon": "🚀",
+      "category": "Backend Development",
+      "technologies": ["Python", "FastAPI", "Docker", "Kubernetes", "RabbitMQ", "MongoDB"],
+      "status": "In Progress",
+      "startDate": "2024-02-01",
+      "endDate": null,
+      "githubUrl": "https://github.com/jdalfons/microservices-platform",
+      "liveUrl": null,
+      "features": [
+        "Event-driven architecture",
+        "CQRS pattern implementation",
+        "Service discovery and load balancing",
+        "Distributed tracing and monitoring",
+        "API gateway with authentication"
+      ]
+    },
+    {
+      "id": 9,
+      "title": "Data Privacy Compliance Tool",
+      "description": "Automated GDPR compliance system for data anonymization, consent management, and privacy impact assessments.",
+      "icon": "🔐",
+      "category": "Data Privacy",
+      "technologies": ["Python", "Django", "PostgreSQL", "Celery", "React"],
+      "status": "Planning",
+      "startDate": "2024-06-01",
+      "endDate": null,
+      "githubUrl": null,
+      "liveUrl": null,
+      "features": [
+        "Data discovery and classification",
+        "Automated data anonymization",
+        "Consent management system",
+        "Privacy impact assessments",
+        "Compliance reporting and auditing"
+      ]
+    }
+  ]
+}
