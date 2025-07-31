@@ -2,34 +2,35 @@
   "projects": [
     {
       "id": 1,
-      "title": "Security Alerts Dashboard",
-      "description": "Interactive dashboard built with Python and Streamlit for real-time security alerts monitoring. Features predictive modeling, KPI tracking, and automated reporting for business intelligence.",
+      "title": "Sales Analytics Dashboard",
+      "description": "Interactive dashboard built with Python and Streamlit for real-time sales analytics. Features predictive modeling, KPI tracking, and automated reporting for business intelligence.",
       "icon": "📈",
       "category": "Data Analytics",
-      "technologies": ["Python", "Streamlit", "Pandas", "Plotly"],
+      "technologies": ["Python", "Streamlit", "Pandas", "Plotly", "PostgreSQL"],
       "status": "Completed",
-        "startDate": "2024-03-10",
-      "endDate": "2025-03-11",
-      "githubUrl": "https://github.com/jdalfons/security_m2sise/tree/main",
-      "liveUrl": "https://huggingface.co/spaces/jdalfonso/sise_opsie",
+      "startDate": "2023-09-01",
+      "date":  "2023-11-15",
+      "githubUrl": "https://github.com/jdalfons/sales-analytics-dashboard",
+      "liveUrl": "https://sales-dashboard-demo.streamlit.app",
       "features": [
-        "Security alerts visualization",
-        "Predictive analytics for threat detection",
+        "Real-time sales metrics visualization",
+        "Predictive analytics for sales forecasting",
         "Interactive filters and drill-down capabilities",
-        "Automated report generation"
+        "Automated report generation",
+        "Integration with CRM systems"
       ]
     },
     {
       "id": 2,
-      "title": "Re-Pilot Recycling chatbot LLM",
-    "description": "Intelligent recycling chatbot using RAG (Retrieval-Augmented Generation) and Mistral AI API. Provides contextualized waste sorting guidance based on user location while measuring environmental impact through model size optimization.",
+      "title": "ML Pipeline Automation",
+      "description": "End-to-end machine learning pipeline with automated data preprocessing, model training, validation, and deployment using Docker, Apache Airflow, and cloud knowledge.",
       "icon": "🤖",
-      "category": "LLM",
-      "technologies": ["Python", "MistralAI", "Docker", "Streamlit", "Scikit-learn", "ChromaDB", "MongoDB", "PostgreSQL"],
+      "category": "Machine Learning",
+      "technologies": ["Python", "Apache Airflow", "Docker", "MLflow", "AWS", "Scikit-learn"],
       "status": "Completed",
       "startDate": "2023-12-01",
       "endDate": "2024-02-28",
-      "githubUrl": "https://github.com/jdalfons/RePilot-recycle-chatbot",
+      "githubUrl": "https://github.com/jdalfons/ml-pipeline-automation",
       "liveUrl": null,
       "features": [
         "Automated data ingestion and preprocessing",
@@ -40,24 +41,24 @@
       ]
     },
     {
-    "id": 3,
-    "title": "M2-Enedis Energy Analytics Platform",
-    "description": "Comprehensive energy consumption analytics dashboard built with Dash and Plotly. Features machine learning predictions for energy labels and consumption, interactive maps, and RESTful API endpoints for real-time data analysis.",
-    "icon": "⚡",
-    "category": "Data Analytics",
-    "technologies": ["Python", "Dash", "Plotly", "FastAPI", "Machine Learning", "Uvicorn"],
-    "status": "Completed",
-    "startDate": "2023-10-15",
-    "endDate": "2023-11-15",
-    "githubUrl": "https://github.com/jdalfons/M2-SISE-Enedis",
-    "liveUrl": null,
-    "features": [
-      "Interactive energy consumption dashboards",
-      "Machine learning predictions for energy labels",
-      "Consumption forecasting API endpoints",
-      "Interactive maps for data visualization",
-      "Real-time analytics and KPI monitoring"
-    ]
+      "id": 3,
+      "title": "Data Processing Platform",
+      "description": "Scalable data processing platform built with FastAPI and PostgreSQL, handling millions of records daily with real-time analytics and RESTful API endpoints.",
+      "icon": "🌍",
+      "category": "Data Engineering",
+      "technologies": ["Python", "FastAPI", "PostgreSQL", "Redis", "Docker", "Kubernetes"],
+      "status": "In Progress",
+      "startDate": "2024-01-15",
+      "endDate": null,
+      "githubUrl": "https://github.com/jdalfons/data-processing-platform",
+      "liveUrl": "https://api.dataplatform.example.com",
+      "features": [
+        "High-throughput data ingestion",
+        "Real-time data processing",
+        "RESTful API with automatic documentation",
+        "Horizontal scaling capabilities",
+        "Data quality monitoring and alerting"
+      ]
     },
     {
       "id": 4,
